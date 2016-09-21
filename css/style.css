@@ -1,0 +1,22 @@
+#contactForm label.error {
+color:red;
+}
+#contactForm input.error {
+border:1px solid red;
+}
+#button-holder{
+    background-color:#f1f1f1;
+    border-top:thin solid #e5e5e5;
+    box-shadow:1px 1px 1px 1px #e5e5e5;
+    cursor:pointer;
+    float:right;
+    height:20px;
+    margin:0 90px 0 0;
+    text-align:center;
+    width:40px;
+}
+ 
+#button-holder img{
+    margin:0px;
+    width:15px; 
+}

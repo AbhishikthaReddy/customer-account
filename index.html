@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Template</title>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/form-validation.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div id="container">
+    	<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Customer</a>
+		    </div>
+		  </div><!-- /.container-fluid -->
+		</nav>
+    </div>
+    <div id="contactForm" class="col-md-6">
+    </div>
+    <div id="account_exists" class="col-md-6">
+    </div>
+    <div id="demo"></div>
+    <script type="text/babel">
+    	var Form = React.createClass({
+    		render: function(){
+    			return(
+    				<div>
+    					<h3>Enter information about the customer...</h3>
+    					<form action="" name="contactForm">
+    						<table width="500px;">
+    							<tr>
+								 <td valign="top">
+								  <label for="company_name">Company name:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="company_name" id="company_name" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="opportunity_number">ROME opportunity number:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="opportunity_number" id="opportunity_number" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="primary_contact">Primary contact:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="primary_contact" id="primary_contact" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="primary_telephone">Primary telephone:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="primary_telephone" id="primary_telephone" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+							    <tr>
+								 <td valign="top">
+								  <label for="email">Primary email:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="email" id="email" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="secondary_telephone">Secondary telephone:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="secondary_telephone" id="secondary_telephone" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+							    <button type="submit">Register</button>
+    						</table>
+						</form>
+    				</div>
+    			);
+    		},
+    		handle_change: function(){
+    			var textValue = this.refs.input.getDOMNode().value;
+    			if(textValue == '')
+    			{
+
+    			}
+    		}
+    	});
+    	var Form1 = React.createClass({
+    		render: function(){
+    			return(
+    				<div>
+    					<h4>Does this customer already have an account?</h4>
+    					<form action="account_exists">
+    						<table width="500px;" padding-top="100px;">
+    							<tr>
+								 <td valign="top">
+								  <label for="search">Account number:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="search" id="search" ref="input" maxlength="50" size="30"/>
+								  	<div id='button-holder'>
+									    <img src='magnifying_glass.png' />
+									</div> 
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="mcn">MCN:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="mcn" id="mcn" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+								<tr>
+								 <td valign="top">
+								  <label for="svid">SVID:</label>
+								 </td>
+								 <td valign="top">
+								  <input  type="text" name="svid" id="svid" ref="input" maxlength="50" size="30"/>
+								 </td>
+								</tr>
+								<br/>
+    						</table>
+    					</form>
+    				</div>
+    			);
+    		},
+    		handle_change: function(){
+    			var textValue = this.refs.input.getDOMNode().value;
+    			if(textValue == '')
+    			{
+
+    			}
+    		}
+    	});
+    	ReactDOM.render(
+            <Form />
+            ,document.getElementById('contactForm')
+        );
+        ReactDOM.render(
+            <Form1 />
+            ,document.getElementById('account_exists')
+        );
+        
+        var text = '{ "employees" : [' +
+		'{ "firstName":"John" , "lastName":"Doe" },' +
+		'{ "firstName":"Anna" , "lastName":"Smith" },' +
+		'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+		var obj = JSON.parse(text);
+        
+        var Form2 = React.createClass({
+        	render: function(){
+    			return(
+    				<div>{obj.employees[1].firstName + " " + obj.employees[1].lastName}</div>
+    			);
+    		}
+        });
+        ReactDOM.render(
+            <Form2 />
+            ,document.getElementById('demo')
+        );
+    </script>
+</body>
+</html>
