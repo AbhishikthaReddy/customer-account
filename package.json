@@ -1,11 +1,18 @@
 {
   "name": "goss",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. npm init\r 2. http-server -a localhost -p 8000\r 3. npm install bootstrap\r 4. npm install jquery",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0",
+    "react-validation": "^2.0.6",
+    "jquery-validation": "^1.15.1"
+  },
+  "devDependencies": {}
 }

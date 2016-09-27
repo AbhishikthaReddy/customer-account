@@ -35,162 +35,108 @@
 		</nav>
     </div>
     <div id="contactForm" class="col-md-6">
+    	<h3>Enter information about the customer...</h3>
+		<form action="" name="contactForm" class="customer">
+			<table width="500px;">
+				<tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="company_name">Company name:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="company_name" id="company_name" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+				<tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="opportunity_number">ROME opportunity number:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="opportunity_number" id="opportunity_number" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+				<tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="primary_contact">Primary contact:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="primary_contact" id="primary_contact" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+				<tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="primary_telephone">Primary telephone:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="primary_telephone" id="primary_telephone" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+			    <tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="email">Primary email:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="email" id="email" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+				<tr>
+				 <td valign="top" style="height:40px;">
+				  <label for="secondary_telephone">Secondary telephone:</label>
+				 </td>
+				 <td valign="top">
+				  <input  type="text" name="secondary_telephone" id="secondary_telephone" ref="input" maxlength="50" size="30"/>
+				 </td>
+				</tr>
+				<tr>
+					<td style="height:40px;"><button type="">Back</button></td>
+					<td style="height:40px;"><button>Next</button></td>
+				</tr>
+			</table>
+		</form>
     </div>
-    <div id="account_exists" class="col-md-6">
-    </div>
-    <div id="demo"></div>
-    <script type="text/babel">
-    	var Form = React.createClass({
-    		render: function(){
-    			return(
-    				<div>
-    					<h3>Enter information about the customer...</h3>
-    					<form action="" name="contactForm">
-    						<table width="500px;">
-    							<tr>
-								 <td valign="top">
-								  <label for="company_name">Company name:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="company_name" id="company_name" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="opportunity_number">ROME opportunity number:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="opportunity_number" id="opportunity_number" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="primary_contact">Primary contact:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="primary_contact" id="primary_contact" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="primary_telephone">Primary telephone:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="primary_telephone" id="primary_telephone" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-							    <tr>
-								 <td valign="top">
-								  <label for="email">Primary email:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="email" id="email" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="secondary_telephone">Secondary telephone:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="secondary_telephone" id="secondary_telephone" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-							    <button type="submit">Register</button>
-    						</table>
-						</form>
-    				</div>
-    			);
-    		},
-    		handle_change: function(){
-    			var textValue = this.refs.input.getDOMNode().value;
-    			if(textValue == '')
-    			{
-
-    			}
-    		}
-    	});
-    	var Form1 = React.createClass({
-    		render: function(){
-    			return(
-    				<div>
-    					<h4>Does this customer already have an account?</h4>
-    					<form action="account_exists">
-    						<table width="500px;" padding-top="100px;">
-    							<tr>
-								 <td valign="top">
-								  <label for="search">Account number:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="search" id="search" ref="input" maxlength="50" size="30"/>
-								  	<div id='button-holder'>
-									    <img src='magnifying_glass.png' />
-									</div> 
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="mcn">MCN:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="mcn" id="mcn" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-								<tr>
-								 <td valign="top">
-								  <label for="svid">SVID:</label>
-								 </td>
-								 <td valign="top">
-								  <input  type="text" name="svid" id="svid" ref="input" maxlength="50" size="30"/>
-								 </td>
-								</tr>
-								<br/>
-    						</table>
-    					</form>
-    				</div>
-    			);
-    		},
-    		handle_change: function(){
-    			var textValue = this.refs.input.getDOMNode().value;
-    			if(textValue == '')
-    			{
-
-    			}
-    		}
-    	});
-    	ReactDOM.render(
-            <Form />
-            ,document.getElementById('contactForm')
-        );
-        ReactDOM.render(
-            <Form1 />
-            ,document.getElementById('account_exists')
-        );
-        
-        var text = '{ "employees" : [' +
-		'{ "firstName":"John" , "lastName":"Doe" },' +
-		'{ "firstName":"Anna" , "lastName":"Smith" },' +
-		'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+    <div>
+		<h4>Does this customer already have an account?</h4>
+		<form action="account_exists">
+			<table width="500px;" padding-top="100px;" class="account_exists_display">
+				<tbody>
+					<tr>
+					 <td valign="top">
+					  <label for="search">Account number:</label>
+					 </td>
+					 <td valign="top">
+					  <input  type="text" name="search" id="search" ref="input" maxlength="50" size="30"/>
+					  	<div id='button-holder'>
+						    <button id="hit" type="button" name="search">Search</button>
+						</div> 
+					 </td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+    <script>
+    	var text = '{ "customer" : [' +
+		'{ "account_num" : "1", "mcn":"John" , "svid":"Doe" },' +
+		'{ "account_num" : "2", "mcn":"Anna" , "svid":"Smith" },' +
+		'{ "account_num" : "3", "mcn":"Peter" , "svid":"Jones" } ]}';
 		var obj = JSON.parse(text);
         
-        var Form2 = React.createClass({
-        	render: function(){
-    			return(
-    				<div>{obj.employees[1].firstName + " " + obj.employees[1].lastName}</div>
-    			);
-    		}
-        });
-        ReactDOM.render(
-            <Form2 />
-            ,document.getElementById('demo')
-        );
+        function get_account_details(val){
+        	for(var i=0;i < obj.customer.length; i++){
+        		if (obj.customer[i].account_num == val){
+        			return[obj.customer[i].mcn, obj.customer[i].svid]
+        		}
+        	}
+        }
+    	$(document).ready(function() {
+		  $('#hit').click(function() {
+		    var search_val = $('#search').val();
+		    var term = get_account_details(search_val);
+	    	$.each(search, function(i,item){
+                $('.account_exists_display tbody').text("")
+                $('.account_exists_display tbody').append('<tr style="font-size:14px"><td style="height:40px;">'+'Account Number:'+'</td><td>'+ search_val +'</td></tr><tr style="font-size:14px"><td style="height:40px;">'+'MCN:'+'</td><td>'+ term[0]+'</td></tr><tr style="font-size:14px"><td style="height:40px;">'+'SVID:'+'</td><td>'+ term[1]+'</td></tr>')
+            })
+		  });
+		});
     </script>
 </body>
 </html>
